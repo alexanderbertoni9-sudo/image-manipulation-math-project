@@ -1,0 +1,18 @@
+Pusdeo Code Planing: 
+
+The alg II portion of our project will be that we use manipaultue images using matrices. We will
+demonstarte the process of getting from image to manipaultued image. More spesficaly, i want to randomly generate an 
+array of white and black sqaures, and then use an edge tracing matrix to find the edges of the work 
+
+I will need these funcitoins : 
+
+    1) something that generates the starting B&W image in a matrix
+    2) something that can display the B&W matrix as an image in a grid pattern 
+    3) manipulute the matrix by using an edge detection matri x
+    4) redraw, and udpate the new image
+
+To build each function:
+    1) use a nested loop and two lists. One called [matrix], that one will store the second list, [list]. 
+    2) figure this out later (ask gpt for help on planning on how to do this do)
+    3) use matrix mulplication 
+    4) run fn made in #2 
