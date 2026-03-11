@@ -1,25 +1,26 @@
 import random
 
-columns = 3 #x
-rows = 3 #y
+rows = 100 #x | B/c you row row row your boat with your arms so rows are HORIZONTAL
+columns = 100 #y | B/c columns stand stall so they are VERTICAL
+
 
 #1: Genreate the Matrix
-def makeLine(x):
-    list = []
-    for i in range (x):
-        list.append(random.randint(0,1))
-    return list
 
-def startingImg(x,y):
-    list = []
+def makeMatrix(rows,cols):
     matrix = []
-
-    for i in range (y): 
-        list = makeLine(x)
-        matrix.append(list)
+    
+    for x in range(rows):
+        line =[]
+        for y in range(cols):
+            line.append(random.uniform(0,255))
+        matrix.append(line)
+    
     return matrix
 
-result = startingImg(columns,rows)
+startingMatrix = makeMatrix(rows,columns)
+
+
+
 
 
 #2: Display the matrix as a tangable thing
@@ -29,8 +30,8 @@ import pygame
 #initiate window
 pygame.init()
 
-cellsize = 10 #each cell is n x n pixels
-screen = pygame.display.set_mode((columns*cellsize, rows*cellsize))
+cellsize = 5 #each cell is n x n pixels
+screen = pygame.display.set_mode((rows*cellsize, columns*cellsize))
 running = True
 
 
@@ -41,13 +42,11 @@ while running:
             running = False
     
     #draw matrix
-    for col in range (columns): #x values
-        for row in range (rows): #y values
-            if result[row][col] == 1:
-                color = (255, 255, 255, 255)
-            else: 
-                color = (0,0,0,0)
-            pygame.draw.rect(screen, color, (col*cellsize, row*cellsize, cellsize, cellsize))
+    for x in range (rows): #x values
+        for y in range (columns): #y values
+            rgb = startingMatrix[x][y]
+            color = (rgb, rgb, rgb)
+            pygame.draw.rect(screen, color, (x*cellsize, y*cellsize, cellsize, cellsize))
     
     #update screen
     pygame.display.flip()
@@ -62,11 +61,3 @@ edgeDetection = [
     [-1,-1,-1]
 ]
 
-
-#Add a funciton to APPLY matricies (reseach what this is and how to do)
-"""
-def applyMatrix(matrix, kernal):
-    #
-
-finalMatrix = applyMatrix(result,edgeDetection)
-"""
