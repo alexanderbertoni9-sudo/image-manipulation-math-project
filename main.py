@@ -1,7 +1,7 @@
 import random
 
-columns = 50 #x
-rows = 50 #y
+columns = 3 #x
+rows = 3 #y
 
 #1: Genreate the Matrix
 def makeLine(x):
@@ -51,3 +51,22 @@ while running:
     
     #update screen
     pygame.display.flip()
+
+#3: multiply the matrix by a kernal matrix
+
+from numpy import array
+
+edgeDetection = [
+    [-1,-1,-1],
+    [-1,8,-1],
+    [-1,-1,-1]
+]
+
+
+#Add a funciton to APPLY matricies (reseach what this is and how to do)
+"""
+def applyMatrix(matrix, kernal):
+    #
+
+finalMatrix = applyMatrix(result,edgeDetection)
+"""
