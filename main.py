@@ -1,7 +1,7 @@
 import random
 
-columns = 3 #x
-rows = 3 #y
+columns = 50 #x
+rows = 50 #y
 
 #1: Genreate the Matrix
 def makeLine(x):
@@ -14,10 +14,9 @@ def startingImg(x,y):
     list = []
     matrix = []
 
-    for i in range (x): 
-        for j in range (y):
-            list = makeLine(x)
-            matrix.append(list)
+    for i in range (y): 
+        list = makeLine(x)
+        matrix.append(list)
     return matrix
 
 result = startingImg(columns,rows)
@@ -52,4 +51,3 @@ while running:
     
     #update screen
     pygame.display.flip()
-    
