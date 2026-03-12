@@ -1,5 +1,8 @@
 import random
 
+#Hi this a test to see if tammy's compter can push code
+
+
 rows = 3 #x | B/c you row row row your boat with your arms so rows are HORIZONTAL
 columns = 3 #y | B/c columns stand stall so they are VERTICAL
 
