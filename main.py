@@ -1,7 +1,7 @@
 import random
 
-rows = 100 #x | B/c you row row row your boat with your arms so rows are HORIZONTAL
-columns = 100 #y | B/c columns stand stall so they are VERTICAL
+rows = 3 #x | B/c you row row row your boat with your arms so rows are HORIZONTAL
+columns = 3 #y | B/c columns stand stall so they are VERTICAL
 
 
 #1: Genreate the Matrix
@@ -12,7 +12,7 @@ def makeMatrix(rows,cols):
     for x in range(rows):
         line =[]
         for y in range(cols):
-            line.append(random.uniform(0,255))
+            line.append(random.randint(0,255))
         matrix.append(line)
     
     return matrix
@@ -30,7 +30,7 @@ import pygame
 #initiate window
 pygame.init()
 
-cellsize = 5 #each cell is n x n pixels
+cellsize = 10 #each cell is n x n pixels
 screen = pygame.display.set_mode((rows*cellsize, columns*cellsize))
 running = True
 
@@ -53,7 +53,7 @@ while running:
 
 #3: multiply the matrix by a kernal matrix
 
-from numpy import array
+import numpy as np
 
 edgeDetection = [
     [-1,-1,-1],
@@ -61,3 +61,13 @@ edgeDetection = [
     [-1,-1,-1]
 ]
 
+def applyKernal(matrix,kernal,row,col):
+    matrixForExport = []
+    for x in range (row):
+        line =[]
+        for y in range(col):
+            
+
+
+editedMatrix = applyKernal(startingMatrix, edgeDetection,rows,columns)
+print(editedMatrix)
